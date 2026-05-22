@@ -1,4 +1,5 @@
 # Federated Learning for Multivariate Time Series Anomaly Detection in Industrial Automation
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20287835.svg)](https://doi.org/10.5281/zenodo.20287835)
 
 This repository contains the code and dataset for our paper "Federated Learning for Multivariate Time Series Anomaly Detection in Industrial Automation". The paper presents a novel approach to anomaly detection in industrial automation using federated learning on multivariate time series data. 
