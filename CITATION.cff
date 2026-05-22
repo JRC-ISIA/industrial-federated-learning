@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this software or dataset, please cite it as below."
+title: "Federated Learning for Multivariate Time Series Anomaly Detection in Industrial Automation"
+type: software
+authors:
+  - family-names: Nosrati
+    given-names: Khayyam
+  - family-names: Uray
+    given-names: Martin
+  - family-names: Messineo
+    given-names: Saverio
+  - family-names: Sassnick
+    given-names: Olaf
+  - family-names: Huber
+    given-names: Stefan
+year: 2026
+conference:
+  name: "Database and Expert Systems Applications - DEXA 2026 Workshops: AISys and AI4IP"
+notes: "To be published"
+url: "http://arxiv.org/abs/2605.XXXXX"
+
+references:
+  - type: dataset
+    title: "Quanser Aero 2 Pick-and-Place Dataset (QAPPD)"
+    authors:
+      - family-names: Nosrati
+        given-names: Khayyam
+      - family-names: Uray
+        given-names: Martin
+      - family-names: Messineo
+        given-names: Saverio
+      - family-names: Sassnick
+        given-names: Olaf
+      - family-names: Huber
+        given-names: Stefan
+    year: 2026
+    month: 5
+    version: "1.0"
+    doi: "10.5281/zenodo.20287835"
+    url: "https://doi.org/10.5281/zenodo.20287835"
+    publisher: Zenodo
+
