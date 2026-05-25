@@ -1,0 +1,21 @@
+model: LSTMAE
+dataset: QAPPD
+paradigm: H-FL
+model_params:
+  seq_dim: 80
+  feat_dim: 14
+  lat_dim: 64
+  num_layer: 3
+  dropout: 0.1
+  pooling: mean
+  lr: 0.001
+  optimizer: SGD
+train_params:
+  batch_size: 1024
+  num_server_rounds: 50
+  local_epochs: 3
+  num_edge_nodes: 3
+  num_fog_servers: 2
+  win_size: 120
+  win_stride: 120
+  total_nodes: 10

@@ -18,13 +18,108 @@ Our results show that model performance depends strongly on both the learning pa
 characteristics, highlighting the need for domain-aware evaluation in industrial anomaly detection.
 
 ## Repository Structure
- TODO
+```
+
+├── centralized
+|  └── run_centralized.py
+|
+├── configs
+|  ├── deepant_cl_asd.yaml
+|  ├── deepant_cl_qappd.yaml
+|  ⋮     ⋮
+|
+├── datasets
+|  └── placeholder
+|
+├── federated
+|  ├── client_app.py
+|  ├── server_app.py
+|  └── run_federated.py
+|
+├── hierarchical_federated
+|  ├── client_controller.py
+|  ├── client_trainer.py
+|  ├── model_trainer.py
+|  ├── run_hierarchical.py
+|  ├── server_aggregator.py
+|  └── server_controller.py
+|
+├── models
+|  ├── deepant.py
+|  ├── lstmae.py
+|  ├── mtadgat.py
+|  ├── tranad.py
+|  └── usad.py
+|
+├── utils
+|  ├── __init__.py
+|  ├── data.py
+|  ├── eval.py
+|  └── model.py
+|
+├── config.py
+├── main.py
+├── CITATION.cff
+├── LICENSE
+└── README.md
+```
 
 ## Installation
-  TODO
+From the root directory, install the required dependencies using:
+
+```
+pip install -r requirements.txt
+```
+
+The requirements.txt file includes the following packages:
+
+```
+numpy
+pandas
+lightning
+tensorboard
+'flwr[simulation]'
+torchmetrics
+scikit-learn
+torch_geometric
+pyyaml
+```
+
+If dependency conflicts arise, execute the following commands sequentially:
+
+``` 
+pip uninstall -y numpy pandas scipy scikit-learn matplotlib lightning torchmetrics
+pip install numpy pandas scipy scikit-learn matplotlib lightning torchmetrics
+```
 
 ## Reproducing Paper Results
-  TODO
+Before running the experiments, ensure that all dependencies are correctly installed as described above. <br>
+
+Next, configure the experiment by modifying configs.py to specify the desired dataset, model, and learning paradigm from the following options:
+
+``` 
+Datasets:
+    ASD
+    QAPPD
+
+Models:
+    DeepAnT
+    LSTMAE
+    MTADGAT
+    TranAD
+    USAD
+
+Paradigms:
+    CL    (Centralized Learning)
+    FL    (Federated Learning)
+    H-FL  (Hierarchical Federated Learning)
+ ```
+
+Finally, execute the main script:
+
+```
+$ python main.py
+```
 
 ## Data
 The Quanser Aero 2 Pick-and-Place Dataset (QAPPD) is available for download on Zenodo at the following link: 
@@ -32,6 +127,11 @@ The Quanser Aero 2 Pick-and-Place Dataset (QAPPD) is available for download on Z
 The dataset includes multivariate time series data collected from a Quanser Aero 2 system performing 
 pick-and-place tasks under various conditions, including normal operation and different types of 
 anomalies.
+
+
+The Application Server Dataset (ASD) is available in the 
+[InterFusion GitHub repository](https://github.com/zhhlee/InterFusion/tree/main).
+
 
 
 ## Citation

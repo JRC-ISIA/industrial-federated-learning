@@ -1,0 +1,19 @@
+model: TranAD
+dataset: QAPPD
+paradigm: FL
+model_params:
+  seq_dim: 120
+  feat_dim: 14
+  lat_dim: 8
+  dropout: 0.1
+  lr: 0.001
+  w_decay: 0.0001
+  optimizer: SGD
+train_params:
+  batch_size: 1024
+  num_server_rounds: 50
+  local_epochs: 3
+  num_edge_nodes: 3
+  win_size: 120
+  win_stride: 120
+  total_nodes: 10
