@@ -57,11 +57,12 @@ characteristics, highlighting the need for domain-aware evaluation in industrial
 |  ├── eval.py
 |  └── model.py
 |
-├── config.py
-├── main.py
 ├── CITATION.cff
+├── config.py
 ├── LICENSE
+├── main.py
 └── README.md
+└── requirements.txt
 ```
 
 ## Installation
@@ -74,15 +75,16 @@ pip install -r requirements.txt
 The requirements.txt file includes the following packages:
 
 ```
-numpy
-pandas
-lightning
-tensorboard
-'flwr[simulation]'
-torchmetrics
-scikit-learn
-torch_geometric
-pyyaml
+flwr==1.30.0
+lightning==2.6.4
+matplotlib==3.10.9
+numpy==2.4.6
+pandas==3.0.3
+PyYAML==6.0.3
+scikit-learn==1.8.0
+scipy==1.17.1
+torch-geometric==2.7.0
+torchmetrics==1.9.0
 ```
 
 If dependency conflicts arise, execute the following commands sequentially:
@@ -133,6 +135,23 @@ The Application Server Dataset (ASD) is available in the
 [InterFusion GitHub repository](https://github.com/zhhlee/InterFusion/tree/main).
 
 
+Please download both datasets and place them in the `datasets` directory, ensuring the following structure:
+
+ ```
+datasets/
+├── ASD/
+│   ├── train_0, train_1, ...
+│   ├── test_0, test_1, ...
+│   └── test_label_0, test_label_1, ...
+└── QAPPD/
+    ├── train_0, train_1, ...
+    ├── test_0, test_1, ...
+    └── test_label_0, test_label_1, ...
+```
+
+
+All files should follow an incremental naming convention (e.g., `train_0`, `train_1`, ..., and similarly for 
+`test` and `test_label`).
 
 ## Citation
 If you find this work useful in your research, please consider citing it:
