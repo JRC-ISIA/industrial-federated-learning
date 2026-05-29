@@ -2,17 +2,17 @@ model: DeepAnT
 dataset: ASD
 paradigm: CL
 model_params:
-  seq_dim: 120
+  seq_dim: 300
   feat_dim: 19
-  kernel_dim_1: 5
-  kernel_dim_2: 7
+  kernel_dim_1: 3
+  kernel_dim_2: 5
   pull_dim: 2
   pred_horizon: 1
-  lr: 0.0005
+  lr: 0.01
   optimizer: Adam
 train_params:
-  epochs: 50
+  epochs: 95
   batch_size: 1024
-  win_size: 120
-  win_stride: 120
+  win_size: 300
+  win_stride: 1
   total_nodes: 12

@@ -2,21 +2,21 @@ model: MTADGAT
 dataset: ASD
 paradigm: H-FL
 model_params:
-  seq_len: 120
+  seq_len: 300
   feat_len: 19
-  embed_dim: 8
-  embed_dim_2: 32
-  conv_dim: 3
+  embed_dim: 14
+  embed_dim_2: 96
+  conv_dim: 15
   batch_size: 1024
   gamma: 0.8
-  lr: 0.0005
+  lr: 0.001
   optimizer: SGD
 train_params:
   batch_size: 1024
-  num_server_rounds: 10
+  num_server_rounds: 70
   local_epochs: 3
-  num_edge_nodes: 3
+  num_edge_nodes: 4
   num_fog_servers: 2
-  win_size: 120
-  win_stride: 120
+  win_size: 300
+  win_stride: 1
   total_nodes: 12

@@ -2,20 +2,20 @@ model: DeepAnT
 dataset: QAPPD
 paradigm: H-FL
 model_params:
-  seq_dim: 120
+  seq_dim: 50
   feat_dim: 14
-  kernel_dim_1: 3
-  kernel_dim_2: 5
+  kernel_dim_1: 11
+  kernel_dim_2: 7
   pull_dim: 2
   pred_horizon: 1
-  lr: 0.001
+  lr: 0.0001
   optimizer: SGD
 train_params:
   batch_size: 1024
-  num_server_rounds: 50
+  num_server_rounds: 100
   local_epochs: 3
   num_edge_nodes: 3
   num_fog_servers: 2
-  win_size: 120
-  win_stride: 120
+  win_size: 50
+  win_stride: 15
   total_nodes: 10

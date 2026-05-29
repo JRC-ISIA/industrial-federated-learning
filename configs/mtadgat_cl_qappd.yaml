@@ -2,18 +2,18 @@ model: MTADGAT
 dataset: QAPPD
 paradigm: CL
 model_params:
-  seq_len: 120
+  seq_len: 300
   feat_len: 14
   embed_dim: 8
-  embed_dim_2: 32
+  embed_dim_2: 96
   conv_dim: 3
   batch_size: 1024
-  gamma: 0.9
-  lr: 0.001
+  gamma: 0.8
+  lr: 0.0001
   optimizer: Adam
 train_params:
-  epochs: 10
+  epochs: 20
   batch_size: 1024
-  win_size: 120
-  win_stride: 120
+  win_size: 300
+  win_stride: 90
   total_nodes: 10
