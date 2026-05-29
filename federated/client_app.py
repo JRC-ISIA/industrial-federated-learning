@@ -37,7 +37,9 @@ def create_client_app(config_dict):
     def client_fn(context: Context) -> Client:
         idx = int(context.node_config["partition-id"])  # no partitioning, only used as clients IDs
         data_path = config_dict["data_dir"]
-        client_train, client_test, _ = load_data(idx + 1, data_path)
+        client_train, client_test, client_label = load_data(idx + 1, data_path)
+        if 'QAPPD' in data_path:
+            client_train, client_test, _ = down_samp(client_train, client_test, client_label, factor=2)
         win_size = config_dict["train_param"]["win_size"]
         win_stride = config_dict["train_param"]["win_stride"]
         batch_size = config_dict["train_param"]["batch_size"]

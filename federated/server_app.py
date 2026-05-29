@@ -36,6 +36,8 @@ def create_server_app(config_dict, res_dict):
         test, label = [], []
         for i in range(config_dict['train_param']['num_edge_nodes']):
             server_train, server_test, test_label = load_data(i+1, path_data)
+            if 'QAPPD' in path_data:
+                server_train, server_test, test_label = down_samp(server_train, server_test, test_label, factor=2)
             _, server_test = scale_data(server_train, server_test, 'minmax')
 
             test_win = create_win_periods(
