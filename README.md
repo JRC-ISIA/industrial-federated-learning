@@ -20,23 +20,23 @@ characteristics, highlighting the need for domain-aware evaluation in industrial
 ## Repository Structure
 ```
 
-├── centralized
+├── centralized/
 |  └── run_centralized.py
 |
-├── configs
+├── configs/
 |  ├── deepant_cl_asd.yaml
 |  ├── deepant_cl_qappd.yaml
 |  ⋮     ⋮
 |
-├── datasets
+├── datasets/
 |  └── placeholder
 |
-├── federated
+├── federated/
 |  ├── client_app.py
 |  ├── server_app.py
 |  └── run_federated.py
 |
-├── hierarchical_federated
+├── hierarchical_federated/
 |  ├── client_controller.py
 |  ├── client_trainer.py
 |  ├── model_trainer.py
@@ -44,14 +44,14 @@ characteristics, highlighting the need for domain-aware evaluation in industrial
 |  ├── server_aggregator.py
 |  └── server_controller.py
 |
-├── models
+├── models/
 |  ├── deepant.py
 |  ├── lstmae.py
 |  ├── mtadgat.py
 |  ├── tranad.py
 |  └── usad.py
 |
-├── utils
+├── utils/
 |  ├── __init__.py
 |  ├── data.py
 |  ├── eval.py
@@ -61,7 +61,7 @@ characteristics, highlighting the need for domain-aware evaluation in industrial
 ├── config.py
 ├── LICENSE
 ├── main.py
-└── README.md
+├── README.md
 └── requirements.txt
 ```
 
