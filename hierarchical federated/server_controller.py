@@ -9,7 +9,7 @@ import ray
 
 from hierarchical_federated.client_controller import ClientController
 from hierarchical_federated.server_aggregator import ServerAggregator
-from utils.data import scale_data, load_data, create_win_periods, batch_loader, CombinedLoader
+from utils.data import scale_data, load_data, down_samp, create_win_periods, batch_loader, CombinedLoader
 from utils.model import get_parameters, set_parameters
 
 logging.getLogger("lightning.pytorch.utilities.rank_zero").setLevel(logging.FATAL)  # turn lightning's device logging off
@@ -156,6 +156,8 @@ class ServerController:
                 test, label = [], []
                 for j in range(self.config['train_param']['total_nodes']):
                     server_train, server_test, test_label = load_data(j+1, self.config['data_dir'])
+                    if 'QAPPD' in self.config['data_dir']:
+                        server_train, server_test, test_label = down_samp(server_train, server_test, test_label, factor=2)
                     _, server_test = scale_data(server_train, server_test, 'minmax')
         
                     test_win = create_win_periods(
