@@ -66,11 +66,13 @@ def get_datasets_stats(config_, sample_idx):
     batch_size = config_['train_param']['batch_size']
     win_size = config_['train_param']['win_size']
     win_stride = config_['train_param']['win_stride']
-    train_set, val_set, label_set = load_data(sample_idx, dataset_path)
-    train_set, val_set = scale_data(train_set, val_set, 'minmax')
+    train_set, test_set, label_set = load_data(sample_idx, dataset_path)
+    if 'QAPPD' in dataset_path:
+        train_set, test_set, label_set = down_samp(train_set, test_set, label_set, factor=2)
+    train_set, test_set = scale_data(train_set, test_set, 'minmax')
     train_set = create_win_periods(train_set, win_size, win_stride)
     num_train_samples = len(train_set)
-    test_set = create_win_periods(val_set, win_size, win_stride)
+    test_set = create_win_periods(test_set, win_size, win_stride)
     train_set = batch_loader(train_set, batch_size, flatten=flat)
     test_set = CombinedLoader([test_set, label_set], mode="max_size_cycle")
 
