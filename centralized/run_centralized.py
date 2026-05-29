@@ -28,7 +28,8 @@ def run_centralized():
     for d in range(1, config['train_param']['total_nodes']+1):
 
         server_train, server_test, test_label = load_data(d, f'datasets/{dataset.upper()}/')
-        server_train, server_test, test_label = down_samp(server_train, server_test, test_label, factor=2)
+        if dataset == 'QAPPD':
+            server_train, server_test, test_label = down_samp(server_train, server_test, test_label, factor=2)
         server_train, server_test = scale_data(server_train, server_test, 'minmax')
 
         train_win = create_win_periods(
