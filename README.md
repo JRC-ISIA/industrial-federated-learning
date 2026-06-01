@@ -1,6 +1,7 @@
 # Federated Learning for Multivariate Time Series Anomaly Detection in Industrial Automation
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20287835.svg)](https://doi.org/10.5281/zenodo.20287835)
+[![arXiv](https://img.shields.io/badge/arXiv-2605.27486-b31b1b.svg)](https://arxiv.org/abs/2605.27486)
 
 This repository contains the code and dataset for our paper "Federated Learning for Multivariate Time Series Anomaly Detection in Industrial Automation". The paper presents a novel approach to anomaly detection in industrial automation using federated learning on multivariate time series data. 
 The dataset used in our experiments, the Quanser Aero 2 Pick-and-Place Dataset (QAPPD), which is available for download on Zenodo, contains multivariate time series data collected from a Quanser Aero 2 system performing pick-and-place tasks under various conditions, including normal operation and different types of anomalies.
